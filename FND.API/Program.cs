@@ -9,6 +9,8 @@ namespace FND.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+            builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
             // Add services to the container.
 
@@ -38,7 +40,10 @@ namespace FND.API
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseHttpsRedirection();
+            }
             app.UseCors("ChromeExtension");
 
             app.UseAuthorization();
