@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Fake News Detector</title>
+      <link rel="stylesheet" href="popup.css">
+    </head>
+
+    <body>
+      <main class="container">
+    <div class="brand"><span class="brand-icon">✓</span><div><h1>Fact check</h1><p class="subtitle">Check this article against published fact checks</p></div></div>
+
+        <form id="analysis-form">
+          <label for="title">Headline</label>
+          <input id="title" name="title" required maxlength="500" placeholder="Enter the headline">
+
+          <label for="source">Source</label>
+          <input id="source" name="source" maxlength="500" placeholder="Optional source">
+
+          <label for="content">Article content</label>
+          <textarea id="content" name="content" required placeholder="Paste the article text here"></textarea>
+
+      <button id="analyze-button" type="submit"><span>Analyze article</span><span class="arrow">→</span></button>
+        </form>
+
+        <p id="status" class="status" role="status"></p>
+
+        <section id="result" class="result hidden" aria-live="polite">
+      <div class="verdict-row"><span id="verdict-emoji" class="verdict-emoji"></span><div><h2 id="verdict"></h2><p id="verdict-subtitle"></p></div></div>
+      <div class="confidence-line"><span>Confidence</span><strong id="confidence"></strong></div>
+      <div class="confidence-track"><div id="confidence-bar"></div></div>
+      <p id="explanation"></p>
+        </section>
+
+      </main>
+      <script src="popup.js"></script>
+    </body>
+</html>

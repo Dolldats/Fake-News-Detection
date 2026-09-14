@@ -1,0 +1,14 @@
+.vs/
+**/bin/
+**/obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+FakeNewsDetector.Extension.zip
+
+# Local configuration and secrets
+appsettings.Local.json
+appsettings.*.Local.json
+*.pfx
+

@@ -1,0 +1,6 @@
+@FND.API_HostAddress = http://localhost:5011
+
+GET {{FND.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

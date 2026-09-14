@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Fake News Detector",
+  "version": "1.0.0",
+  "description": "Analyze news articles for possible misinformation.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "http://localhost:5011/*",
+    "https://localhost:7000/*"
+  ]
+}
